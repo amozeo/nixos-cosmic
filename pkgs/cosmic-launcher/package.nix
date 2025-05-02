@@ -19,8 +19,12 @@ rustPlatform.buildRustPackage {
     hash = "sha256-HxVc2EaUsl2iRT2DbWibYgsGC1WK19x0R8JQsFET2hM=";
   };
 
+  cargoPatches = [
+    ./replace-local-libcosmic-with-git-sources.patch
+  ];
+
   useFetchCargoVendor = true;
-  cargoHash = "sha256-/TOMdxaBZMUiWliWIPHK01KHWF8SsRKOL8i647plajY=";
+  cargoHash = "sha256-krYtzNu2xMEtZQKn3pGNK8Stw+6ytBjUMk6bM7RmtKg=";
 
   nativeBuildInputs = [
     libcosmicAppHook
