@@ -26,6 +26,7 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [
     libcosmicAppHook
     just
+    rustPlatform.bindgenHook
   ];
   buildInputs = [ glib ];
 
