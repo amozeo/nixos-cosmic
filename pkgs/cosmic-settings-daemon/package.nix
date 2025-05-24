@@ -4,6 +4,7 @@
   rustPlatform,
   geoclue2-with-demo-agent,
   libinput,
+  libxkbcommon,
   pkg-config,
   pulseaudio,
   udev,
@@ -27,6 +28,7 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
     libinput
+    libxkbcommon
     pulseaudio
     udev
   ];
