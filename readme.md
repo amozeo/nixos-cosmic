@@ -15,7 +15,7 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # NOTE: change "nixos-unstable" to "nixos-24.11" for stable channel
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # NOTE: change "nixos-unstable" to "nixos-25.05" for stable channel
 
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
