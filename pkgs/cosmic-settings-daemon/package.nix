@@ -5,6 +5,7 @@
   geoclue2-with-demo-agent,
   libinput,
   libxkbcommon,
+  openssl,
   pkg-config,
   pulseaudio,
   udev,
@@ -29,6 +30,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [
     libinput
     libxkbcommon
+    openssl
     pulseaudio
     udev
   ];
