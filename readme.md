@@ -1,8 +1,6 @@
 # NixOS COSMIC
 
-Nix package set and NixOS module for using COSMIC. It is mainly a repository for testing COSMIC as it is developed.
-
-Dedicated development matrix room: <https://matrix.to/#/#cosmic:nixos.org>
+Nix package set for using COSMIC as it is developed.
 
 ## Usage
 

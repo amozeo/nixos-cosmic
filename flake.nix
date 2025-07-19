@@ -74,7 +74,10 @@
       };
 
       nixosModules = {
-        default = import ./nixos { cosmicOverlay = self.overlays.default; };
+        default = import ./nixos {
+          cosmicOverlay = self.overlays.default;
+          nixpkgsPath = nixpkgs;
+        };
       };
 
       legacyPackages = forAllSystems (
