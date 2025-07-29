@@ -10,16 +10,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-clipboard-manager";
-  version = "0.1.0-unstable-2025-07-22";
+  version = "0.1.0-unstable-2025-07-25";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "clipboard-manager";
-    rev = "44084a5cd1ad904d41484e0946985fe2f4b36b4f";
-    hash = "sha256-b0X+ywyovblJG6cdEPxYtvUL0loynnxQ/qnWC8WRT5I=";
+    rev = "87b08b0bde313099b996c5f1d0d0cc6e97eb40c7";
+    hash = "sha256-5dwq6WMEOJQvWzSLXNs7CgUrif//xUZhMv3RxK1Sq9w=";
   };
 
-  cargoHash = "sha256-DljfGmNW6bmBaDLXiNOXKMPQxw1VYqb1eltXqEHdisM=";
+  cargoHash = "sha256-txGU/tNzD7yiroXAxH8PGAn6l9c4yDtqDhViPBulhj8=";
 
   nativeBuildInputs = [
     libcosmicAppHook
