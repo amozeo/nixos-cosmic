@@ -18,13 +18,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "1.0.0-alpha.7-unstable-2025-08-04";
+  version = "1.0.0-alpha.7-unstable-2025-08-06";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "1d3d869f4aac416b84efae1586f4878907cd1e98";
-    hash = "sha256-1sCrvbXAdbgJiH3MFUz3iS9vtw8B52ez3cA2WJ0BeyA=";
+    rev = "a5d813dc9ba941b76a4898cfd4cdb133b9fd429b";
+    hash = "sha256-8q6uiBVMCWKXe/N+lLNjNJtVWVQJTggDcjXD7BVuxCc=";
   };
 
   cargoHash = "sha256-1CoRvwcE48P+UMqBK9XdVfhtLi0k4LHRCnqMGfwxkPw=";
