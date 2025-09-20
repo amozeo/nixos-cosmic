@@ -3,9 +3,11 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
+  libinput,
   pipewire,
   pkg-config,
   pulseaudio,
+  systemdLibs,
   nix-update-script,
 }:
 
@@ -28,8 +30,10 @@ rustPlatform.buildRustPackage {
     rustPlatform.bindgenHook
   ];
   buildInputs = [
+    libinput
     pipewire
     pulseaudio
+    systemdLibs
   ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";
