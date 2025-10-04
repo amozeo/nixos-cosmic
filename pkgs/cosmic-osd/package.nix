@@ -7,7 +7,7 @@
   pipewire,
   pkg-config,
   pulseaudio,
-  systemdLibs,
+  udev,
   nix-update-script,
 }:
 
@@ -33,7 +33,7 @@ rustPlatform.buildRustPackage {
     libinput
     pipewire
     pulseaudio
-    systemdLibs
+    udev
   ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";
