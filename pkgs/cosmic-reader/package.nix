@@ -3,6 +3,14 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
+  fontconfig,
+  gumbo,
+  harfbuzz,
+  jbig2dec,
+  libjpeg,
+  openjpeg,
+  leptonica,
+  tesseract,
   nix-update-script,
 }:
 
@@ -21,6 +29,18 @@ rustPlatform.buildRustPackage {
 
   nativeBuildInputs = [
     libcosmicAppHook
+    rustPlatform.bindgenHook
+  ];
+
+  buildInputs = [
+    fontconfig
+    gumbo
+    harfbuzz
+    jbig2dec
+    libjpeg
+    openjpeg
+    leptonica
+    tesseract
   ];
 
   passthru.updateScript = nix-update-script {
