@@ -28,16 +28,16 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.0-beta.1.1-unstable-2025-10-07";
+  version = "1.0.0-beta.1.1-unstable-2025-10-14";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "b6fc00972dddf7e5d5064dce6c4b6e823b513e48";
-    hash = "sha256-/7B6sG0uQt6GFprqj5RWQ8vE9ymvK/QRNpOZmQ/jE+U=";
+    rev = "55035e197c8791af7ddf0b326f796d1ed655a902";
+    hash = "sha256-ziA9dy3wZHhpgBNgjC/Uq8M7R5B62k3PGzFiC+rrPpI=";
   };
 
-  cargoHash = "sha256-d3geLJHT7L/974M0ZurTQ3uBJxc+aLuDL110jnOjtlk=";
+  cargoHash = "sha256-mMfKY+ouszbN2rEf6zvv1Sc1FEZ/ZVuQ6RXGMBFDwIE=";
 
   nativeBuildInputs = [
     libcosmicAppHook'
@@ -65,8 +65,8 @@ rustPlatform.buildRustPackage {
     "prefix"
     (placeholder "out")
     "--set"
-    "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-settings"
+    "cargo-target-dir"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}"
   ];
 
   postInstall = ''
