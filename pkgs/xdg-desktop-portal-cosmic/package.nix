@@ -43,12 +43,6 @@ rustPlatform.buildRustPackage rec {
 
   env.VERGEN_GIT_SHA = src.rev;
 
-  # TODO: remove when dbus activation for xdg-desktop-portal-cosmic is fixed to properly start it
-  postPatch = ''
-    substituteInPlace data/org.freedesktop.impl.portal.desktop.cosmic.service \
-      --replace-fail 'Exec=/bin/false' 'Exec=${lib.getExe' coreutils "true"}'
-  '';
-
   dontCargoInstall = true;
 
   makeFlags = [
