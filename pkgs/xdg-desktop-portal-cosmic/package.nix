@@ -16,16 +16,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
-  version = "1.0.0-beta.1.1-unstable-2025-10-14";
+  version = "1.0.0-beta.2-unstable-2025-10-17";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "362148d832a55742e765e61d7c30692096f62126";
-    hash = "sha256-01mfgFYf0WkzdkvYjalSEH2qzN5SZFb2CN7gRlO4epo=";
+    rev = "56da80f1b4bb8ae84dc4aee50c191bcd6b2ec118";
+    hash = "sha256-JNLcrOj04HHFg8p76IdziMKbc2cjWIT+zhihzXis19M=";
   };
 
-  cargoHash = "sha256-80c1KVko9jGoBVLuwsQ6RW6+YpKT+PQqcFbSF4L5TQQ=";
+  cargoHash = "sha256-gaDVt/0QPFZHnt9veUo5bvZECxKZcIrja/QdLBn/Xi4=";
 
   separateDebugInfo = true;
 
@@ -42,12 +42,6 @@ rustPlatform.buildRustPackage rec {
   checkInputs = [ gst_all_1.gstreamer ];
 
   env.VERGEN_GIT_SHA = src.rev;
-
-  # TODO: remove when dbus activation for xdg-desktop-portal-cosmic is fixed to properly start it
-  postPatch = ''
-    substituteInPlace data/org.freedesktop.impl.portal.desktop.cosmic.service \
-      --replace-fail 'Exec=/bin/false' 'Exec=${lib.getExe' coreutils "true"}'
-  '';
 
   dontCargoInstall = true;
 
