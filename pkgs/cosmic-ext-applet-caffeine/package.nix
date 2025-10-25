@@ -43,7 +43,7 @@ rustPlatform.buildRustPackage {
   meta = {
     homepage = "https://github.com/tropicbliss/cosmic-ext-applet-caffeine";
     description = "Caffeine Applet for the COSMIC desktop";
-    license = lib.licenses.mit;
+    license = lib.licenses.gpl2;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
       HeitorAugustoLN
