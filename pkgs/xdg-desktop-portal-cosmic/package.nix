@@ -4,7 +4,6 @@
   rustPlatform,
   fetchFromGitHub,
   libcosmicAppHook,
-  coreutils,
   util-linux,
   libgbm ? null,
   mesa,
@@ -49,10 +48,6 @@ rustPlatform.buildRustPackage rec {
     "CARGO_TARGET_DIR=target/${stdenv.hostPlatform.rust.cargoShortTarget}"
     "prefix=${placeholder "out"}"
   ];
-
-  postInstall = ''
-    mv $out/libexec $out/bin
-  '';
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
