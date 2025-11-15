@@ -16,13 +16,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-greeter";
-  version = "1.0.0-beta.5-unstable-2025-11-04";
+  version = "1.0.0-beta.6-unstable-2025-11-14";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "9aacf6cc1161546ff1c368d8c8f5c9fb230575d9";
-    hash = "sha256-E0oQ4oinx6tdZ13jCWOJ5vtebocRbnaQbBk61UcRfD8=";
+    rev = "f806087fc89cea8b3c7d78c13536d13cc7c53b57";
+    hash = "sha256-r/xhJR3xtLxPusMUKzS2PGsS51m1jfoxZByJWcXLaoY=";
   };
 
   cargoHash = "sha256-4yRBgFrH4RBpuvChTED+ynx+PyFumoT2Z+R1gXxF4Xc=";
