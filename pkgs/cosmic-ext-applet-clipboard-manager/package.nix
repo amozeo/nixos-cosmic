@@ -8,7 +8,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage (self: {
   pname = "cosmic-ext-applet-clipboard-manager";
   version = "0.1.0-unstable-2025-11-27";
 
@@ -34,15 +34,17 @@ rustPlatform.buildRustPackage {
     "prefix"
     (placeholder "out")
     "--set"
-    "env-dst"
-    "${placeholder "out"}/etc/profile.d/cosmic-ext-applet-clipboard-manager.sh"
-    "--set"
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-applet-clipboard-manager"
   ];
 
   preCheck = ''
     export XDG_RUNTIME_DIR="$TMP"
+  '';
+  
+  postPatch = ''
+    substituteInPlace justfile \
+      --replace-fail "\`git rev-parse --short HEAD\`" "'${lib.substring 0 8 self.src.rev}'"
   '';
 
   passthru.updateScript = nix-update-script { };
@@ -57,4 +59,4 @@ rustPlatform.buildRustPackage {
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-clipboard-manager";
   };
-}
+})
