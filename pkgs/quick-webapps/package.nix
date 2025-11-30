@@ -3,9 +3,11 @@
   fetchFromGitHub,
   libcosmicAppHook,
   rustPlatform,
+  gtk3,
+  glib,
   just,
-  openssl,
   pkg-config,
+  webkitgtk_4_1,
   stdenv,
   nix-update-script,
 }:
@@ -30,7 +32,9 @@ rustPlatform.buildRustPackage rec {
   ];
 
   buildInputs = [
-    openssl
+    gtk3
+    glib
+    webkitgtk_4_1
   ];
 
   dontUseJustBuild = true;
@@ -38,11 +42,14 @@ rustPlatform.buildRustPackage rec {
 
   justFlags = [
     "--set"
-    "prefix"
+    "base-dir"
     (placeholder "out")
     "--set"
     "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/quick-webapps"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/dev-heppen-webapps"
+    "--set"
+    "webview-src"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/dev-heppen-webapps-webview"
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
