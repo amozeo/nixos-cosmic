@@ -1,11 +1,13 @@
 {
   pkgs ? null,
+  nixpkgsUnstablePath ? null,
   final ? null,
   prev ? null,
   rustPlatform ? null,
 }:
 
 let
+  lib = final.lib or pkgs.lib;
   dir = builtins.readDir ./.;
   pkgsPaths = builtins.filter (pkgPath: pkgPath != null) (
     builtins.map (
@@ -20,12 +22,11 @@ let
     ) (builtins.attrNames dir)
   );
   pkgsOverrides =
-    if rustPlatform != null then
-      {
-        inherit rustPlatform;
-      }
-    else
-      { };
+    lib.optionalAttrs (rustPlatform != null) {
+      rustPlatform = rustPlatform;
+    } // lib.optionalAttrs (nixpkgsUnstablePath != null) {
+      libcosmicAppHook = callPackage "${nixpkgsUnstablePath}/pkgs/by-name/li/libcosmicAppHook/package.nix" { };
+    };
   callPackage =
     if final != null then
       (

@@ -69,6 +69,7 @@
           final: prev:
           import ./pkgs {
             inherit final prev;
+            nixpkgsUnstablePath = "${nixpkgs}";
             rustPlatform = rustPlatformFor prev;
           };
       };
