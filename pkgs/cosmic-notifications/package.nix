@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-notifications";
-  version = "1.0.1-unstable-2025-12-30";
+  version = "1.0.1-unstable-2026-01-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-notifications";
-    rev = "98bf8c59876b7865f4e1a95ae0d7025ecda4b020";
-    hash = "sha256-8wYX3KCWXHwTb7NHg0wXxmxtVG+jOFU3EidIomPYY0s=";
+    rev = "d4918c3aef0eced4238231d785cdaf0845fdd497";
+    hash = "sha256-lvqqeY/FPv+LFTmZoBUuKWCjAGZozGj/yUCphlFuk/g=";
   };
 
   cargoHash = "sha256-zyM4iMJs2wPIKIEdji1uJF3WYpPGihFswIK5Wyf6Mns=";
