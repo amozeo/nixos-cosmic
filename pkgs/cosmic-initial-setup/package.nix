@@ -12,16 +12,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-initial-setup";
-  version = "1.0.3-unstable-2026-01-27";
+  version = "1.0.4-unstable-2026-01-31";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-initial-setup";
-    rev = "1234b1dbe6aa0da669b4d02a7eeb94dbe34f92b8";
-    hash = "sha256-hECROBS9dVYbmB48YLyvQrGNT6/YPOaIz7XJOGqq60I=";
+    rev = "467be1a39dcc6f5f4763dbe453e48e4eee972c32";
+    hash = "sha256-y2wRVAnCh1B45MZLj0e1waAJlsp/cUUcshuHItyCQgs=";
   };
 
-  cargoHash = "sha256-EYwe64gatv7qP77ArjyAeLKSYV6HyKRcncYhphXEeBM=";
+  cargoHash = "sha256-Kj+eaTMHMQQHN0X3prIuZm1wvfnaV7BUlUKem6JLtc8=";
 
   buildFeatures = [ "nixos" ];
 
