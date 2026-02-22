@@ -5,7 +5,10 @@
   bash,
   dbus,
   just,
+  replaceVars,
   stdenv,
+  cutecosmic,
+  qt6,
   nix-update-script,
 }:
 
@@ -21,6 +24,12 @@ rustPlatform.buildRustPackage {
   };
 
   cargoHash = "sha256-wFh9AYQRZB9qK0vCrhW9Zk61Yg+VY3VPAqJRD47NbK4=";
+
+  patches = [
+    (replaceVars ./hardcode-cutecosmic-plugin-path.patch {
+      cutecosmic = "${cutecosmic}/${qt6.qtbase.qtPluginPrefix}";
+    })
+  ];
 
   postPatch = ''
     substituteInPlace data/start-cosmic \
