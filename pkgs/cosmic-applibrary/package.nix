@@ -10,7 +10,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applibrary";
-  version = "1.0.7-unstable-2026-02-19";
+  version = "1.0.8-unstable-2026-02-19";
 
   src = fetchFromGitHub {
     owner = "pop-os";
