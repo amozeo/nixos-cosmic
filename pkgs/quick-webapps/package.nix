@@ -14,13 +14,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "quick-webapps";
-  version = "3.0.0-unstable-2026-03-04";
+  version = "3.0.0-unstable-2026-03-08";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "web-apps";
-    rev = "288d5369aefcb8857d8bfa25e21419c964480e06";
-    hash = "sha256-5E9fLo7Jg1s6MUPEK/XHe15ElU6F0Kbk4X7GonE6pyU=";
+    rev = "d4512325463575ac3fdd82e4ce5510b5cd501b2a";
+    hash = "sha256-Z8PslEsOoRihXpsexMVx4FJkw+C1SKUlg5yDUWTQh5k=";
   };
 
   cargoHash = "sha256-gZwSM2J7NW36FktUzWS1Os2rGf9jNE8zdJu5ZVy9hQw=";
