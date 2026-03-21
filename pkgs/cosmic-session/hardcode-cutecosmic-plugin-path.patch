@@ -17,6 +17,6 @@ index 73df86d..b11660b
 -            export QT_QPA_PLATFORMTHEME=qt5ct
 -        fi
 +    export QT_PLUGIN_PATH=@cutecosmic@"${QT_PLUGIN_PATH:+:$QT_PLUGIN_PATH}"
-     done
+-    done
  fi
  
