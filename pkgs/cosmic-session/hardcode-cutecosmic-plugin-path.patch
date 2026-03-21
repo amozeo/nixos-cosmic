@@ -2,7 +2,7 @@ diff --git a b
 index 73df86d..b11660b
 --- a/data/start-cosmic
 +++ b/data/start-cosmic
-@@ -41,16 +41,7 @@ export DCONF_PROFILE=cosmic
+@@ -41,16 +41,6 @@ export DCONF_PROFILE=cosmic
  # Set the QT platform theme to CuteCosmic. Fallback to qt6ct if CuteCosmic is not installed.
  if [ -z "$QT_QPA_PLATFORMTHEME" ]; then
      export QT_QPA_PLATFORMTHEME=cosmic
