@@ -28,13 +28,13 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.8-unstable-2026-03-23";
+  version = "1.0.8-unstable-2026-03-24";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "4597822df43cd05d2bb9ca04b28af27f3918a2e7";
-    hash = "sha256-6P6ZjuKcrisles2efqz5S+mMwZXMpI/4FC3ifp+Hp70=";
+    rev = "7dc9530a3e3d804b36a0d78a75e39efdcf72bbba";
+    hash = "sha256-2YUcPUxYfWYEK5nLfambFgdvKq5TYGGiMvb1KJoxmDs=";
   };
 
   cargoHash = "sha256-0MIQUmxtZsCXWj8qUHocNCdqTciFIKfP6SwMaPa8e6U=";
