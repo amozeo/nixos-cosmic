@@ -20,8 +20,8 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "9bba897a3742188f3ac7e998628da9c766be0035";
-    hash = "sha256-8Q/d8mMgiX7qvugmlwpn3gYkbQUFIsy9RKTAPKc9A18=";
+    rev = "0b3a881b07abfc72d3595d54c3986a9f7348a411";
+    hash = "sha256-R9Vl3anuPC6D4Hy30+hCpHqCbPZCLpD8LAVDjE5WmY0=";
   };
 
   cargoHash = "sha256-VvtfI1HQZWuputhAQXP94zMusFHwOwit78QHzlHlJRw=";
