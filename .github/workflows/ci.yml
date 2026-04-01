@@ -27,11 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: DeterminateSystems/nix-installer-action@v21
+      - uses: samueldr/lix-gha-installer-action@v2026-02-22
         with:
-          diagnostic-endpoint: ''
-          source-url: 'https://install.lix.systems/lix/lix-installer-${{ matrix.architecture.system }}'
-          extra-conf: |
+          extra_nix_config: |
             http2 = false
 
       - uses: cachix/cachix-action@v16
