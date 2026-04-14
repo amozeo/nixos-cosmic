@@ -10,7 +10,7 @@
 
 stdenvNoCC.mkDerivation {
   pname = "cosmic-icons";
-  version = "1.0.9-unstable-2026-04-10";
+  version = "1.0.10-unstable-2026-04-10";
 
   src = fetchFromGitHub {
     owner = "pop-os";
