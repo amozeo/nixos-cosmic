@@ -2,8 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
-
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +17,6 @@
     {
       self,
       nixpkgs,
-      nixpkgs-stable,
       rust-overlay,
       ...
     }:
@@ -249,14 +246,11 @@
               inherit (nixosConfig) config pkgs;
             }
           ) { inherit nixpkgs; };
-
-          vm-stable = self.legacyPackages.${system}.vm.override { nixpkgs = nixpkgs-stable; };
         }
       );
 
       checks = forAllSystems (system: {
         vm = self.legacyPackages.${system}.vm.closure;
-        vm-stable = self.legacyPackages.${system}.vm-stable.closure;
       });
     };
 }
