@@ -9,7 +9,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-screenshot";
-  version = "1.0.15-unstable-2026-06-01";
+  version = "1.0.16-unstable-2026-06-01";
 
   src = fetchFromGitHub {
     owner = "pop-os";
