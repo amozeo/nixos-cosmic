@@ -11,7 +11,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "1.0.15-unstable-2026-06-06";
+  version = "1.0.16-unstable-2026-06-06";
 
   src = fetchFromGitHub {
     owner = "pop-os";
