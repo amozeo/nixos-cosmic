@@ -11,16 +11,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "1.0.16-unstable-2026-06-11";
+  version = "1.2.0-unstable-2026-07-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "0ba7c11416eb457ea24dcceee2f7b00030537b76";
-    hash = "sha256-poajnhFHAhoc2xhjMzgXTYqAQanAXj9UK9/DVKsjWso=";
+    rev = "029400b2b447d9d31f1a772d7f6f0d5eed2ea21e";
+    hash = "sha256-GvPHhoRxGIUACIIDGQKJkEbK76uBcDr/NLsLshlkM+A=";
   };
 
-  cargoHash = "sha256-6E+bAi1f6gOZh64wyvLMKZiZNlMexPV+ZzS3riOx9xM=";
+  cargoHash = "sha256-XIthlStPM97vjhJTdofUOkOudH1id6W2U4YdOxEh/eo=";
 
   nativeBuildInputs = [
     libcosmicAppHook
