@@ -15,16 +15,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
-  version = "1.0.16-unstable-2026-06-09";
+  version = "1.2.0-unstable-2026-07-10";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "4bf00a2a89a5a1710c2248ab666fe490646e3026";
-    hash = "sha256-LwZqF3Yg4DMis21wtu1XMAoPTjJ39GPrf07K9Yc2YAg=";
+    rev = "151120e67d532e33e2721319c683a73947be393c";
+    hash = "sha256-9ERxmSXOkOo7s/CjT3GEVVku0tb6bclmLLALcYSeYIw=";
   };
 
-  cargoHash = "sha256-wSwXzaU872KqcRgAIKRuQFvG9f/q4z0OysysLyYMwdg=";
+  cargoHash = "sha256-W2nXNRQVP0cHRgzpsjMq79IzlqIy2DVsPfll7rvCKZc=";
 
   separateDebugInfo = true;
 
@@ -41,8 +41,6 @@ rustPlatform.buildRustPackage rec {
   checkInputs = [ gst_all_1.gstreamer ];
 
   env.VERGEN_GIT_SHA = src.rev;
-
-  dontCargoInstall = true;
 
   makeFlags = [
     "CARGO_TARGET_DIR=target/${stdenv.hostPlatform.rust.cargoShortTarget}"
