@@ -3,29 +3,36 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
+  dav1d,
   just,
   nasm,
+  pkg-config,
   stdenv,
   nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-bg";
-  version = "1.0.16-unstable-2026-04-30";
+  version = "1.2.0-unstable-2026-07-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-bg";
-    rev = "b1ca4c180ab29dd185472b777ab0abdb1f96ccaf";
-    hash = "sha256-E4OWxoGyRNFcMl7ni7PB6PE0Yl7dE+Wd4JGDMHO94Yw=";
+    rev = "ed65f7d3dc9e3d4af3cd65244a966e01bff0f730";
+    hash = "sha256-yPUbkcQmJGOcKkpi3pfHHW8ggw7juTW3GHD8l+kDI9w=";
   };
 
-  cargoHash = "sha256-xXq8Dckg3YOf2AT9uOZqVfq00FhZp/X5UU8hLmAln1U=";
+  cargoHash = "sha256-wU9McdejpTFNJd2VTrMREzdW4WIw0p5GTuhynt/vVro=";
 
   nativeBuildInputs = [
     libcosmicAppHook
     just
     nasm
+    pkg-config
+  ];
+
+  buildInputs = [
+    dav1d
   ];
 
   dontUseJustBuild = true;
