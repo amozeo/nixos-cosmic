@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-calculator";
-  version = "0.2.0-unstable-2026-03-04";
+  version = "0.2.0-unstable-2026-06-20";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "calculator";
-    rev = "b28dd38bd1fedba038da44ca86bc12cb5d0a6a5e";
-    hash = "sha256-8V4nGOFjlfJe2kHmSzHumLbMW7tcU89usqktCLNVSns=";
+    rev = "c6af2c9e169fceaaac8a4cfe123055c64675d956";
+    hash = "sha256-TOsV1jTJGIQAGxsIsQc7j/VaCUrnPLiEQLK1Mgpp7+Y=";
   };
 
   cargoHash = "sha256-nq5gjfWohq/IMNlQZtIBYYjRaqlMeaEzRGvRX66ZbRQ=";
