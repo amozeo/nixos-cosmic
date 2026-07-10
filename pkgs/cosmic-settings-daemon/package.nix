@@ -7,30 +7,33 @@
   libxkbcommon,
   openssl,
   pkg-config,
-  pulseaudio,
+  pipewire,
   udev,
   nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "1.0.16-unstable-2026-05-13";
+  version = "1.2.0-unstable-2026-07-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "fa82bdf9fe7b5f5bd6008f32f393efd5e7a71c47";
-    hash = "sha256-A+nOAadFWU+KRW54dP2WW6P6fabIs4z1AqC37LSZjUI=";
+    rev = "8c54bbbc10485c31e8717c21e119e19b87eeb3ea";
+    hash = "sha256-hgvw7+/3olCitNgHVEJfB8q274Ya+FegUhTHJ74U2EY=";
   };
 
-  cargoHash = "sha256-bz+JasI3WE30sKKgjofVO/42Ml4YY9Dw3JxnZmZVQk4=";
+  cargoHash = "sha256-WuscaiN3Dg/BcCC7czIUPq6jALLu4RHvwHEqprK7ClE=";
 
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [
+    rustPlatform.bindgenHook
+    pkg-config
+  ];
   buildInputs = [
     libinput
     libxkbcommon
     openssl
-    pulseaudio
+    pipewire
     udev
   ];
 
