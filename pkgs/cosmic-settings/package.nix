@@ -6,6 +6,7 @@
   libcosmicAppHook,
   cmake,
   cosmic-randr,
+  dav1d,
   expat,
   fontconfig,
   freetype,
@@ -28,16 +29,16 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.16-unstable-2026-06-08";
+  version = "1.2.0-unstable-2026-07-10";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "3a77442dbc1dee16d9df99aa6fbb4afa42bc58dc";
-    hash = "sha256-knA3qpFeRRlUMV91+LleaWxb1fexX2IJlMRD81fl7l4=";
+    rev = "fff148587658a1a5caf8ea792ba31c032a2a5440";
+    hash = "sha256-reRiR9X6tdpL1rHzpQMkpS9UgM5/GdYMAVCLl4vG2BA=";
   };
 
-  cargoHash = "sha256-2ZHuOmtBzXQ/KSBMKus9LbojfByYzzCjIkbGY8C85bU=";
+  cargoHash = "sha256-nW6dirq/5jGlwRhDqYG9VKGywtYdh4uxmeXhcSwcxwI=";
 
   nativeBuildInputs = [
     libcosmicAppHook'
@@ -48,6 +49,7 @@ rustPlatform.buildRustPackage {
     util-linux
   ];
   buildInputs = [
+    dav1d
     expat
     fontconfig
     freetype
