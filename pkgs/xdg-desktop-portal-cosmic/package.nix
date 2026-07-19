@@ -3,6 +3,7 @@
   stdenv,
   rustPlatform,
   fetchFromGitHub,
+  just,
   libcosmicAppHook,
   util-linux,
   libgbm ? null,
@@ -31,6 +32,7 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [
     libcosmicAppHook
     rustPlatform.bindgenHook
+    just
     pkg-config
     util-linux
   ];
@@ -42,9 +44,16 @@ rustPlatform.buildRustPackage rec {
 
   env.VERGEN_GIT_SHA = src.rev;
 
-  makeFlags = [
-    "CARGO_TARGET_DIR=target/${stdenv.hostPlatform.rust.cargoShortTarget}"
-    "prefix=${placeholder "out"}"
+  dontUseJustBuild = true;
+  dontUseJustCheck = true;
+
+  justFlags = [
+    "--set"
+    "prefix"
+    (placeholder "out")
+    "--set"
+    "bin-src"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/xdg-desktop-portal-cosmic"
   ];
 
   passthru.updateScript = nix-update-script {
