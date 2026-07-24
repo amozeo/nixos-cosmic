@@ -17,8 +17,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tweaks";
-    rev = "d8157fe89db901406c02e2fca371a8949e19a17c";
-    hash = "sha256-5nvDX/qMIOwpSU82slnIhDt8itY+R5cLv4my89T77tQ=";
+    rev = "069c31b7b1beffddf744b28f8f056ace972830bc";
+    hash = "sha256-7UOUtnOx6takeKIK3Q0Z98m0iYyvVLhLF0sYqevLHBQ=";
   };
 
   cargoHash = "sha256-Y1ric0hDtBuegufmb/gVYz2FnsxSWZ6nUBvbeCD8oao=";
