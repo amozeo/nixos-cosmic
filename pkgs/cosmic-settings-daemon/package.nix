@@ -6,9 +6,11 @@
   libinput,
   libxkbcommon,
   openssl,
+  patchelf,
   pkg-config,
   pipewire,
   udev,
+  wayland,
   nix-update-script,
 }:
 
@@ -27,6 +29,7 @@ rustPlatform.buildRustPackage {
 
   nativeBuildInputs = [
     rustPlatform.bindgenHook
+    patchelf
     pkg-config
   ];
   buildInputs = [
@@ -43,6 +46,10 @@ rustPlatform.buildRustPackage {
     mkdir -p $out/share/{polkit-1/rules.d,cosmic/com.system76.CosmicSettings.Shortcuts/v1}
     cp data/polkit-1/rules.d/*.rules $out/share/polkit-1/rules.d/
     cp data/system_actions.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/system_actions
+  '';
+
+  postFixup = ''
+    patchelf --add-rpath ${lib.makeLibraryPath [ wayland ]} $out/bin/cosmic-settings-daemon
   '';
 
   passthru.updateScript = nix-update-script {
