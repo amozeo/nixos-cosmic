@@ -16,16 +16,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "1.5.0-unstable-2026-07-22";
+  version = "1.5.0-unstable-2026-08-12";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "21a9692b53fcbffa0f18f7d0a12bf0f9d5bd0590";
-    hash = "sha256-e53lyq9tmZnrhS6CYL+KTlCMnunKoN2GEvCHhHAX2hI=";
+    rev = "fad4b8aad9fb2813b403e131f2f9c4af936c7250";
+    hash = "sha256-0zKgASh9Q2Kq8sEjCD2qRJRkA9KZqBlD3krirKYW2Sg=";
   };
 
-  cargoHash = "sha256-Le0FRKuSJWx6zRwU2b1+hyJzZJ+bsT039vn/Nhkf+k0=";
+  cargoHash = "sha256-4rGgRc7EDdxGvFmAUY4kJ9aO/Pas9S2Q+b5ArZNydvs=";
 
   nativeBuildInputs = [
     rustPlatform.bindgenHook

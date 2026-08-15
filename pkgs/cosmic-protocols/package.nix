@@ -8,13 +8,13 @@
 
 stdenv.mkDerivation {
   pname = "cosmic-protocols";
-  version = "0-unstable-2026-07-10";
+  version = "0-unstable-2026-08-14";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-protocols";
-    rev = "e95d89504513e1407f89a189aca328fbecc9eeef";
-    hash = "sha256-u1Ur9lPm2HE60jCEJVhKtbGYfzV8pdiDjrsGwgKf3nA=";
+    rev = "a2da48188362c4ea05d33de2f6c67d8148deba88";
+    hash = "sha256-hqsOzu0mlkE2jtgL5HvbT9vtOKiMSniNwV+xk4UzTkc=";
   };
 
   makeFlags = [ "PREFIX=${placeholder "out"}" ];
@@ -28,10 +28,7 @@ stdenv.mkDerivation {
   meta = {
     homepage = "https://github.com/pop-os/cosmic-protocols";
     description = "Additional wayland-protocols used by the COSMIC Desktop Environment";
-    license = with lib.licenses; [
-      mit
-      gpl3Only
-    ];
+    license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
