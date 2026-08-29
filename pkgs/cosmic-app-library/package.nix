@@ -10,16 +10,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applibrary";
-  version = "1.5.0-unstable-2026-07-28";
+  version = "1.7.0-unstable-2026-08-26";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applibrary";
-    rev = "172acdae07aeb78a554813a566c0f8b942dcc831";
-    hash = "sha256-MW/p9ufEofcKr350KDZLqXxpxgFrISSPgH6cFqT7TOI=";
+    rev = "5fe2aa8a3536570c3ee63ef08b5cec5b71fb4488";
+    hash = "sha256-3NEJDEHqbe2Tt+rTlF/uWFC5yHQfa76ZwVwBUHP77CE=";
   };
 
-  cargoHash = "sha256-Lq1Gs1/dcIxfWM4jNIH2qGu94HCC+JKxFdUTb/MDHzg=";
+  cargoHash = "sha256-UNSoRkHFQ1VpIeF/xMyONpwZ8hG5yUkTWqq/9LQ1wqs=";
 
   nativeBuildInputs = [
     libcosmicAppHook
@@ -37,6 +37,8 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-app-library"
   ];
+
+  env.APP_ID = "com.system76.CosmicAppLibrary";
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
