@@ -5,6 +5,7 @@
   libcosmicAppHook,
   cmake,
   coreutils,
+  dav1d,
   just,
   libinput,
   linux-pam,
@@ -16,16 +17,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-greeter";
-  version = "1.5.0-unstable-2026-07-29";
+  version = "1.7.0-unstable-2026-08-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "f64e2d8fab716a2a8a23a5082041762a2cdf7215";
-    hash = "sha256-cBnymcSnd8SsxqYjgDwOdtVJdBeIULLvQEorrAVAnZs=";
+    rev = "935891e36bf265a3c65906694badc1e66cfc091d";
+    hash = "sha256-Yi+MrPo8VMxghblAhIWbXli3wGtklzoyI8GbaaZO6Qo=";
   };
 
-  cargoHash = "sha256-5A+7sgZqJcXjK51i5thAm9LK1SrW9ly8NHyf3IZfWQA=";
+  cargoHash = "sha256-vHR9go8/iVUT7oBV8h+mmBvhi2oSKNBKtV0uoDOr6go=";
 
   nativeBuildInputs = [
     libcosmicAppHook
@@ -34,6 +35,7 @@ rustPlatform.buildRustPackage rec {
     just
   ];
   buildInputs = [
+    dav1d
     libinput
     linux-pam
     udev
