@@ -3,7 +3,7 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
-  libdisplay-info,
+  libdisplay-info_0_3,
   libgbm ? null,
   libinput,
   mesa,
@@ -39,7 +39,7 @@ rustPlatform.buildRustPackage {
     pkg-config
   ];
   buildInputs = [
-    libdisplay-info
+    libdisplay-info_0_3
     (if libgbm != null then libgbm else mesa)
     libinput
     pixman
