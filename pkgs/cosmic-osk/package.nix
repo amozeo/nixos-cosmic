@@ -55,6 +55,6 @@ rustPlatform.buildRustPackage {
     description = "On screen keyboard for the COSMIC Desktop Environment";
     license = lib.licenses.gpl3Only;
     platforms = lib.platforms.linux;
-    mainProgram = "cosmic-files";
+    mainProgram = "cosmic-osk";
   };
 }
