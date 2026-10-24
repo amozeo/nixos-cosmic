@@ -10,16 +10,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-calculator";
-  version = "0.2.1-unstable-2026-09-08";
+  version = "0.2.1-unstable-2026-10-20";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "calculator";
-    rev = "d22de56b6a0d293b1d40881d57f8a26607454ada";
-    hash = "sha256-lJ70+cRch3BCShwwArjwC9adMW/jCH+lDUWnEEEqrRc=";
+    rev = "65f1d40e768920de4836175246272a83bf2f3e13";
+    hash = "sha256-OrIWydiH2Kowvo2IVvwHHfJk0OZJgVGYMk6imMHF38U=";
   };
 
-  cargoHash = "sha256-a4WckNyKXS71dT0uYbO7tUUmD0Dw8vSzrPp29O4aiAk=";
+  cargoHash = "sha256-Za7grrpznLY80U05OH9PMQVrXaeEC+vQoP5gXOpSMyY=";
 
   nativeBuildInputs = [
     libcosmicAppHook
